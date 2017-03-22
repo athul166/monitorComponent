@@ -2,29 +2,13 @@ import React, { Component } from 'react';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
 import { Container, Row, Col } from 'react-grid-system';
-import StageList from './StageList'
-import SwipeableViews from 'react-swipeable-views';
 
 class JobsList extends Component {
-  constructor()
-  {
-    super();
-    this.state={
-      status:false
-    };
-  }
-  handleClick(){
-    this.setState({
-      status:true
-    })
-  }
   render() {
     return(
-      <div>
-      { this.state.status ? <StageList /> :
         <div>
               <Container>
-                <Card style={{'width':'50%','margin':'auto','marginTop':10,'backgroundColor':'#009688','color':'#FFF'}}>
+                <Card style={{'width':'100%','margin':'auto','marginTop':10,'backgroundColor':'#009688','color':'#FFF'}}>
                   <Row>
                       <Col sm={6}>
                         <CardHeader>
@@ -36,7 +20,7 @@ class JobsList extends Component {
                       </Col>
                   </Row>
                 </Card>
-                <Card style={{'width':'50%','margin':'auto','marginTop':10}} onClick={this.handleClick.bind(this)}>
+                <Card style={{'width':'100%','margin':'auto','marginTop':10}} onClick={this.props.handleClick.bind(this,1)}>
                   <Row>
                       <Col sm={6}>
                         <CardHeader
@@ -54,7 +38,7 @@ class JobsList extends Component {
                       </Col>
                   </Row>
                 </Card>
-                <Card style={{'width':'50%','margin':'auto','marginTop':10}}>
+                <Card style={{'width':'100%','margin':'auto','marginTop':10}}>
                   <Row>
                       <Col sm={6}>
                         <CardHeader
@@ -72,7 +56,7 @@ class JobsList extends Component {
                       </Col>
                   </Row>
                 </Card>
-                <Card style={{'width':'50%','margin':'auto','marginTop':10}}>
+                <Card style={{'width':'100%','margin':'auto','marginTop':10}}>
                   <Row>
                       <Col sm={6}>
                         <CardHeader
@@ -92,8 +76,6 @@ class JobsList extends Component {
                 </Card>
               </Container>
         </div>
-      }
-    </div>
     );
   }
 }
